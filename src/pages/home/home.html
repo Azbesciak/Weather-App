@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>{{"HOME" | translate}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -18,22 +18,22 @@
     <ion-col width-100>
       <ion-list>
         <ion-item>
-          <strong>Temp: </strong> {{weather.temperature_string}}
+          <strong>{{"TEMP" | translate}}: </strong> {{weather.temperature_string}}
         </ion-item>
 
         <ion-item>
-          <strong>Relative Humidity: </strong> {{weather.relative_humidity}}
+          <strong>{{"REL_HUM" | translate}}: </strong> {{weather.relative_humidity}}
         </ion-item>
 
         <ion-item>
-          <strong>Dewpoint: </strong> {{weather.dewpoint_string}}
+          <strong>{{"DEWPOINT" | translate}}: </strong> {{weather.dewpoint_string}}
         </ion-item>
 
         <ion-item>
-          <strong>Visibility: </strong> {{weather.visibility_km}}
+          <strong>{{"VISIBILITY" | translate}}: </strong> {{weather.visibility_km}}
         </ion-item>
         <ion-item>
-          <strong>Heat index: </strong> {{weather.heat_index_string}}
+          <strong>{{"HEAT_INDEX" | translate}}: </strong> {{weather.heat_index_string}}
         </ion-item>
       </ion-list>
     </ion-col>

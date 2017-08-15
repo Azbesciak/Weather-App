@@ -1,0 +1,19 @@
+{
+  "CITY": "Miasto",
+  "STATE": "Województwo(kod)",
+  "SAVE_CHANGES": "Zapisz zmiany",
+  "SETTINGS": "Ustawienia",
+
+  "HOME": "Strona główna",
+  "TEMP": "Temp",
+  "REL_HUM": "Względna wilgotność",
+  "DEWPOINT": "Punkt rosy",
+  "VISIBILITY": "widoczność",
+  "HEAT_INDEX": "Wskaźnik ciepła",
+
+  "APP_NAME": "nazwa aplikacji",
+  "VERSION": "Wersja",
+  "APP_DESC_LABEL": "Opis",
+  "APP_DESC": "prosta aplikacja internetowa"
+
+}

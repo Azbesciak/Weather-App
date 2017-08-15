@@ -1,0 +1,19 @@
+{
+  "CITY": "City",
+  "STATE": "State",
+  "SAVE_CHANGES": "Save Changes",
+  "SETTINGS": "Settings",
+
+  "HOME": "Home",
+  "TEMP": "Temp",
+  "REL_HUM": "Relative Humidity",
+  "DEWPOINT": "Dewpoint",
+  "VISIBILITY": "Visibility",
+  "HEAT_INDEX": "Heat index",
+
+  "APP_NAME": "App Name",
+  "VERSION": "Version",
+  "APP_DESC_LABEL": "Description",
+  "APP_DESC": "Simple Web application"
+
+}

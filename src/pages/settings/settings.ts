@@ -17,7 +17,9 @@ import {HomePage} from "../home/home";
 })
 export class SettingsPage {
   private location: Location;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private locationProvider: LocationProvider) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private locationProvider: LocationProvider) {
     this.locationProvider.location
       .then(location => this.location = location);
   }
@@ -27,6 +29,10 @@ export class SettingsPage {
 
   saveForm() {
     this.locationProvider.saveLocation(this.location);
-    this.navCtrl.insert(0, HomePage).then(() => this.navCtrl.pop());
+    this.navCtrl.insert(0, HomePage)
+      .then(() => this.navCtrl.pop())
+      .then(() => this.navCtrl.parent.select(0));
   }
+
+
 }
