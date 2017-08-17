@@ -5,11 +5,14 @@
 </ion-header>
 
 <ion-content padding class="home">
-
+  <ion-badge float-right *ngIf="recetUpdate" (click)="getWeather(true)">
+    <ion-icon name="time"></ion-icon>
+    {{recetUpdate | date: 'HH:mm'}}
+  </ion-badge>
   <ion-grid *ngIf="weather">
     <ion-row>
       <ion-col width-50 offset-25>
-        <h2 class="location">{{weather.display_location.full}}</h2>
+        <h2 class="location">{{weather.display_location.city}}, {{weather.display_location.state}}</h2>
         <div class="icon"><img src="{{weather.icon_url}}"></div>
         <h3 class="desc">{{weather.weather}}</h3>
         <h1 class="temp">{{weather.temp_c}}&deg;C</h1>

@@ -41,4 +41,8 @@ export class I18nProvider {
     let language = availableLanguages.find(x => x.code == lang);
     return isDefined(language) ? language : defaultLanguage;
   }
+
+  public getCurrentLanguage(): Language {
+    return sysOptions.systemLanguage;
+  }
 }

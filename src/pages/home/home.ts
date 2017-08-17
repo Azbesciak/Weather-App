@@ -8,6 +8,7 @@ import {WeatherProvider} from "../../providers/weather/weather"
 })
 export class HomePage {
   private weather: any;
+  private recetUpdate: number;
 
   constructor(public navCtrl: NavController,
               private weatherProvider: WeatherProvider) {
@@ -15,9 +16,16 @@ export class HomePage {
   }
 
   ionViewWillEnter() {
+    this.getWeather();
+  }
+
+  private getWeather(isRefresh: boolean = false) {
     this.weatherProvider
-      .getWeather()
-      .then(weather => this.weather = weather.current_observation)
+      .getWeather(isRefresh)
+      .then(weather => {
+        this.weather = weather.observation;
+        this.recetUpdate = weather.timestamp;
+      })
   }
 
 

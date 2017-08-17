@@ -19,6 +19,7 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {Globalization} from "@ionic-native/globalization";
+import { RefresherProvider } from '../providers/refresher/refresher';
 
 export function createTranslateLoader(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -61,7 +62,8 @@ export function createTranslateLoader(http: HttpClient): TranslateLoader {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     WeatherProvider,
     LocationProvider,
-    I18nProvider
+    I18nProvider,
+    RefresherProvider
   ]
 })
 export class AppModule {
