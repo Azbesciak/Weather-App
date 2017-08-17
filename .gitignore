@@ -58,3 +58,6 @@ www/
 .env
 
 /.editorconfig
+/.idea/
+.idea/
+plugins/

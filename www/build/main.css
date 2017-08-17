@@ -25202,11 +25202,11 @@ ion-navbar.toolbar {
 .home {
   background-color: #6495ed;
   color: #f4f4f4;
-  margin-top: 30px;
 }
 
-.toolbar-title {
-  text-align: center;
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
 }
 
 .tabs-md .tabs-button-icon {
@@ -25233,4 +25233,8 @@ page-home .location {
 
 page-home .desc {
   font-size: 30px;
+}
+
+page-settings button {
+  margin-top: 20px !important;
 }

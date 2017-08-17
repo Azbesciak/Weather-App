@@ -1,7 +1,10 @@
 .home {
   background-color: color($colors, primary);
   color: color($colors, light);
-  margin-top: 30px;
+}
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
 }
 
 .tabs-md .tabs-button-icon {
