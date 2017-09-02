@@ -25217,6 +25217,7 @@ page-home .temp {
   font-size: 90px;
   text-align: center;
   font-weight: normal;
+  margin-bottom: -10px;
 }
 
 page-home .location, page-home .icon, page-home .desc {
@@ -25229,10 +25230,17 @@ page-home .icon img {
 
 page-home .location {
   font-size: 40px;
+  font-weight: 500;
 }
 
 page-home .desc {
   font-size: 30px;
+}
+
+page-home .refresh-date {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 5px;
 }
 
 page-settings button {

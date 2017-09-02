@@ -1,10 +1,10 @@
-import {Injectable} from "@angular/core";
+import { Injectable } from "@angular/core";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/toPromise"
-import {Location, LocationProvider} from "../location/location"
-import {I18nProvider} from "../i18n/i18n";
-import {Storage} from "@ionic/storage";
-import {RefresherProvider} from "../refresher/refresher";
+import { Location, LocationProvider } from "../location/location"
+import { I18nProvider } from "../i18n/i18n";
+import { Storage } from "@ionic/storage";
+import { RefresherProvider } from "../refresher/refresher";
 import { Http } from "@angular/http";
 
 @Injectable()
@@ -33,6 +33,7 @@ export class WeatherProvider {
   public getWeather(refresh: boolean = false): Promise<Weather> {
     return this.checkWeatherInStorage()
       .then((weather: Weather) => {
+        console.log("pogoda", weather);
         if (weather && !refresh)
           return weather;
         else
@@ -62,17 +63,15 @@ export class WeatherProvider {
     return res;
   }
 
-  private checkWeatherInStorage(): Promise<Weather> {
-    return this.storage.get(this.CURRENT_WEATHER_KEY).then((weather: Weather) => {
-      if (this.canUseStoredWeather(weather)) {
-        return weather;
-      } else {
-        return null;
-      }
-    })
+  private async checkWeatherInStorage(): Promise<Weather> {
+    return this.storage.get(this.CURRENT_WEATHER_KEY)
+      .then((weather: Weather) =>
+        this.checkIfCanUseStoredWeather(weather)
+          .then(canUse => canUse ? weather : null)
+      )
   }
 
-  private canUseStoredWeather(weather: Weather): Promise<boolean> {
+  private checkIfCanUseStoredWeather(weather: Weather): Promise<boolean> {
     return this.refresher.refreshTime
       .then((period: number) => weather && this.isUpToDate(weather, period))
   }

@@ -5,40 +5,47 @@
 </ion-header>
 
 <ion-content padding class="home">
-  <ion-badge float-right *ngIf="recetUpdate" (click)="getWeather(true)">
-    <ion-icon name="time"></ion-icon>
-    {{recetUpdate | date: 'HH:mm'}}
-  </ion-badge>
+  <ion-refresher (ionRefresh)="refreshWeather($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-grid *ngIf="weather">
     <ion-row>
       <ion-col width-50 offset-25>
-        <h2 class="location">{{weather.display_location.city}}, {{weather.display_location.state}}</h2>
+        <div class="location">{{weather.display_location.city}}, {{weather.display_location.state}}</div>
         <div class="icon"><img src="{{weather.icon_url}}"></div>
-        <h3 class="desc">{{weather.weather}}</h3>
-        <h1 class="temp">{{weather.temp_c}}&deg;C</h1>
+        <div class="desc">{{weather.weather}}</div>
+        <div class="temp">{{weather.temp_c}}&deg;C</div>
       </ion-col>
     </ion-row>
-    <ion-col width-100>
-      <ion-list>
-        <ion-item>
-          <strong>{{"TEMP" | translate}}: </strong> {{weather.temperature_string}}
-        </ion-item>
+    <ion-row justify-content-end>
+      <ion-badge *ngIf="recentUpdate" class="refresh-date">
+        <ion-icon name="time"></ion-icon>
+        <span class="timer">{{recentUpdate | timeAgo}}</span>
+      </ion-badge>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <ion-item>
+            <strong>{{"TEMP" | translate}}: </strong> {{weather.temperature_string}}
+          </ion-item>
 
-        <ion-item>
-          <strong>{{"REL_HUM" | translate}}: </strong> {{weather.relative_humidity}}
-        </ion-item>
+          <ion-item>
+            <strong>{{"REL_HUM" | translate}}: </strong> {{weather.relative_humidity}}
+          </ion-item>
 
-        <ion-item>
-          <strong>{{"DEWPOINT" | translate}}: </strong> {{weather.dewpoint_string}}
-        </ion-item>
+          <ion-item>
+            <strong>{{"DEWPOINT" | translate}}: </strong> {{weather.dewpoint_string}}
+          </ion-item>
 
-        <ion-item>
-          <strong>{{"VISIBILITY" | translate}}: </strong> {{weather.visibility_km}}
-        </ion-item>
-        <ion-item>
-          <strong>{{"HEAT_INDEX" | translate}}: </strong> {{weather.heat_index_string}}
-        </ion-item>
-      </ion-list>
-    </ion-col>
+          <ion-item>
+            <strong>{{"VISIBILITY" | translate}}: </strong> {{weather.visibility_km}}
+          </ion-item>
+          <ion-item>
+            <strong>{{"HEAT_INDEX" | translate}}: </strong> {{weather.heat_index_string}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>

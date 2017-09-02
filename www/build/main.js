@@ -176,7 +176,7 @@ webpackEmptyAsyncContext.id = 126;
 
 var map = {
 	"../pages/settings/settings.module": [
-		308,
+		310,
 		0
 	]
 };
@@ -253,9 +253,10 @@ var RefresherProvider = (function () {
 }());
 RefresherProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]) === "function" && _a || Object])
 ], RefresherProvider);
 
+var _a;
 //# sourceMappingURL=refresher.js.map
 
 /***/ }),
@@ -335,13 +336,13 @@ AboutPage = __decorate([
 
 /***/ }),
 
-/***/ 220:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(236);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -349,7 +350,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -358,7 +359,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(290);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_about_about__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__ = __webpack_require__(213);
@@ -370,17 +371,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_storage__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_location_location__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_i18n_i18n__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ngx_translate_http_loader__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ngx_translate_http_loader__ = __webpack_require__(303);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ngx_translate_core__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_common_http__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_common_http__ = __webpack_require__(305);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_globalization__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_refresher_refresher__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_time_ago_pipe_index__ = __webpack_require__(309);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -416,9 +419,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__pages_about_about__["a" /* AboutPage */],
             __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_tabs_tabs__["a" /* TabsPage */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_settings_settings__["a" /* SettingsPage */]
+            __WEBPACK_IMPORTED_MODULE_7__pages_settings_settings__["a" /* SettingsPage */],
         ],
         imports: [
+            __WEBPACK_IMPORTED_MODULE_20_time_ago_pipe_index__["a" /* TimeAgoPipeModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_11__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_17__angular_common_http__["b" /* HttpClientModule */],
@@ -461,7 +465,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 271:
+/***/ 272:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -488,7 +492,7 @@ var defaultLanguage = english;
 
 /***/ }),
 
-/***/ 289:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -612,7 +616,7 @@ var Location = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(262);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__location_location__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__i18n_i18n__ = __webpack_require__(88);
@@ -627,6 +631,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
 };
 
 
@@ -659,6 +698,7 @@ var WeatherProvider = (function () {
         if (refresh === void 0) { refresh = false; }
         return this.checkWeatherInStorage()
             .then(function (weather) {
+            console.log("pogoda", weather);
             if (weather && !refresh)
                 return weather;
             else
@@ -685,17 +725,18 @@ var WeatherProvider = (function () {
         return res;
     };
     WeatherProvider.prototype.checkWeatherInStorage = function () {
-        var _this = this;
-        return this.storage.get(this.CURRENT_WEATHER_KEY).then(function (weather) {
-            if (_this.canUseStoredWeather(weather)) {
-                return weather;
-            }
-            else {
-                return null;
-            }
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.storage.get(this.CURRENT_WEATHER_KEY)
+                        .then(function (weather) {
+                        return _this.checkIfCanUseStoredWeather(weather)
+                            .then(function (canUse) { return canUse ? weather : null; });
+                    })];
+            });
         });
     };
-    WeatherProvider.prototype.canUseStoredWeather = function (weather) {
+    WeatherProvider.prototype.checkIfCanUseStoredWeather = function (weather) {
         var _this = this;
         return this.refresher.refreshTime
             .then(function (period) { return weather && _this.isUpToDate(weather, period); });
@@ -739,11 +780,7 @@ var WeatherProvider = (function () {
 }());
 WeatherProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__angular_http__["a" /* Http */],
-        __WEBPACK_IMPORTED_MODULE_3__location_location__["b" /* LocationProvider */],
-        __WEBPACK_IMPORTED_MODULE_4__i18n_i18n__["a" /* I18nProvider */],
-        __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */],
-        __WEBPACK_IMPORTED_MODULE_6__refresher_refresher__["a" /* RefresherProvider */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_7__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__location_location__["b" /* LocationProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__location_location__["b" /* LocationProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__i18n_i18n__["a" /* I18nProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__i18n_i18n__["a" /* I18nProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__refresher_refresher__["a" /* RefresherProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__refresher_refresher__["a" /* RefresherProvider */]) === "function" && _e || Object])
 ], WeatherProvider);
 
 var Weather = (function () {
@@ -754,6 +791,7 @@ var Weather = (function () {
     return Weather;
 }());
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=weather.js.map
 
 /***/ }),
@@ -767,7 +805,7 @@ var Weather = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_globalization__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__language__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__language__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_util__ = __webpack_require__(2);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -857,21 +895,25 @@ var HomePage = (function () {
     HomePage.prototype.ionViewWillEnter = function () {
         this.getWeather();
     };
+    HomePage.prototype.refreshWeather = function (refresher) {
+        this.getWeather(true)
+            .then(function () { return refresher.complete(); });
+    };
     HomePage.prototype.getWeather = function (isRefresh) {
         var _this = this;
         if (isRefresh === void 0) { isRefresh = false; }
-        this.weatherProvider
+        return this.weatherProvider
             .getWeather(isRefresh)
             .then(function (weather) {
             _this.weather = weather.observation;
-            _this.recetUpdate = weather.timestamp;
+            _this.recentUpdate = weather.timestamp;
         });
     };
     return HomePage;
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Projects\iweather\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>{{"HOME" | translate}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="home">\n  <ion-badge float-right *ngIf="recetUpdate" (click)="getWeather(true)">\n    <ion-icon name="time"></ion-icon>\n    {{recetUpdate | date: \'HH:mm\'}}\n  </ion-badge>\n  <ion-grid *ngIf="weather">\n    <ion-row>\n      <ion-col width-50 offset-25>\n        <h2 class="location">{{weather.display_location.city}}, {{weather.display_location.state}}</h2>\n        <div class="icon"><img src="{{weather.icon_url}}"></div>\n        <h3 class="desc">{{weather.weather}}</h3>\n        <h1 class="temp">{{weather.temp_c}}&deg;C</h1>\n      </ion-col>\n    </ion-row>\n    <ion-col width-100>\n      <ion-list>\n        <ion-item>\n          <strong>{{"TEMP" | translate}}: </strong> {{weather.temperature_string}}\n        </ion-item>\n\n        <ion-item>\n          <strong>{{"REL_HUM" | translate}}: </strong> {{weather.relative_humidity}}\n        </ion-item>\n\n        <ion-item>\n          <strong>{{"DEWPOINT" | translate}}: </strong> {{weather.dewpoint_string}}\n        </ion-item>\n\n        <ion-item>\n          <strong>{{"VISIBILITY" | translate}}: </strong> {{weather.visibility_km}}\n        </ion-item>\n        <ion-item>\n          <strong>{{"HEAT_INDEX" | translate}}: </strong> {{weather.heat_index_string}}\n        </ion-item>\n      </ion-list>\n    </ion-col>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\Projects\iweather\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\Projects\iweather\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>{{"HOME" | translate}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="home">\n  <ion-refresher (ionRefresh)="refreshWeather($event)">\n    <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n  <ion-grid *ngIf="weather">\n    <ion-row>\n      <ion-col width-50 offset-25>\n        <div class="location">{{weather.display_location.city}}, {{weather.display_location.state}}</div>\n        <div class="icon"><img src="{{weather.icon_url}}"></div>\n        <div class="desc">{{weather.weather}}</div>\n        <div class="temp">{{weather.temp_c}}&deg;C</div>\n      </ion-col>\n    </ion-row>\n    <ion-row justify-content-end>\n      <ion-badge *ngIf="recentUpdate" class="refresh-date">\n        <ion-icon name="time"></ion-icon>\n        <span class="timer">{{recentUpdate | timeAgo}}</span>\n      </ion-badge>\n    </ion-row>\n    <ion-row>\n      <ion-col width-100>\n        <ion-list>\n          <ion-item>\n            <strong>{{"TEMP" | translate}}: </strong> {{weather.temperature_string}}\n          </ion-item>\n\n          <ion-item>\n            <strong>{{"REL_HUM" | translate}}: </strong> {{weather.relative_humidity}}\n          </ion-item>\n\n          <ion-item>\n            <strong>{{"DEWPOINT" | translate}}: </strong> {{weather.dewpoint_string}}\n          </ion-item>\n\n          <ion-item>\n            <strong>{{"VISIBILITY" | translate}}: </strong> {{weather.visibility_km}}\n          </ion-item>\n          <ion-item>\n            <strong>{{"HEAT_INDEX" | translate}}: </strong> {{weather.heat_index_string}}\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\Projects\iweather\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__["a" /* WeatherProvider */]])
@@ -881,5 +923,5 @@ HomePage = __decorate([
 
 /***/ })
 
-},[220]);
+},[221]);
 //# sourceMappingURL=main.js.map

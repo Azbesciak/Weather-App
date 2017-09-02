@@ -20,6 +20,7 @@ import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {Globalization} from "@ionic-native/globalization";
 import { RefresherProvider } from '../providers/refresher/refresher';
+import { TimeAgoPipeModule } from "time-ago-pipe/index";
 
 export function createTranslateLoader(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,9 +32,10 @@ export function createTranslateLoader(http: HttpClient): TranslateLoader {
     AboutPage,
     HomePage,
     TabsPage,
-    SettingsPage
+    SettingsPage,
   ],
   imports: [
+    TimeAgoPipeModule,
     BrowserModule,
     HttpModule,
     HttpClientModule,

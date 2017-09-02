@@ -4,10 +4,10 @@ page-home {
     font-size: 90px;
     text-align: center;
     font-weight: normal;
+    margin-bottom: -10px;
   }
   .location, .icon, .desc {
     text-align: center;
-
   }
 
   .icon img {
@@ -15,10 +15,17 @@ page-home {
   }
   .location {
     font-size: 40px;
+    font-weight: 500;
   }
 
   .desc {
     font-size: 30px;
+  }
+
+  .refresh-date {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
   }
 
 }

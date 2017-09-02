@@ -8,7 +8,7 @@ import {WeatherProvider} from "../../providers/weather/weather"
 })
 export class HomePage {
   private weather: any;
-  private recetUpdate: number;
+  private recentUpdate: number;
 
   constructor(public navCtrl: NavController,
               private weatherProvider: WeatherProvider) {
@@ -19,12 +19,17 @@ export class HomePage {
     this.getWeather();
   }
 
+  private refreshWeather(refresher) {
+    this.getWeather(true)
+      .then(() => refresher.complete())
+  }
+
   private getWeather(isRefresh: boolean = false) {
-    this.weatherProvider
+    return this.weatherProvider
       .getWeather(isRefresh)
       .then(weather => {
         this.weather = weather.observation;
-        this.recetUpdate = weather.timestamp;
+        this.recentUpdate = weather.timestamp;
       })
   }
 
