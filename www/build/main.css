@@ -25243,6 +25243,11 @@ page-home .refresh-date {
   grid-gap: 5px;
 }
 
-page-settings button {
-  margin-top: 20px !important;
+page-settings ion-footer {
+  height: 46px;
+}
+
+page-settings ion-footer #save-changes {
+  margin: 0;
+  height: 100%;
 }

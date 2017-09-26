@@ -11,9 +11,6 @@
   "VISIBILITY": "widoczność",
   "HEAT_INDEX": "Wskaźnik ciepła",
 
-  "APP_NAME": "nazwa aplikacji",
-  "VERSION": "Wersja",
-  "APP_DESC_LABEL": "Opis",
-  "APP_DESC": "prosta aplikacja internetowa"
+  "REFRESH_PERIOD": "Odświeżanie"
 
 }

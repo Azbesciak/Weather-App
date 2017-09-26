@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {WeatherProvider} from "../../providers/weather/weather"
+import { SettingsPage } from "../settings/settings";
 
 @Component({
   selector: 'page-home',
@@ -9,6 +10,8 @@ import {WeatherProvider} from "../../providers/weather/weather"
 export class HomePage {
   private weather: any;
   private recentUpdate: number;
+
+  settingPage = SettingsPage;
 
   constructor(public navCtrl: NavController,
               private weatherProvider: WeatherProvider) {
@@ -19,7 +22,7 @@ export class HomePage {
     this.getWeather();
   }
 
-  private refreshWeather(refresher) {
+  refreshWeather(refresher) {
     this.getWeather(true)
       .then(() => refresher.complete())
   }
@@ -31,6 +34,10 @@ export class HomePage {
         this.weather = weather.observation;
         this.recentUpdate = weather.timestamp;
       })
+  }
+
+  goToSettings() {
+    this.navCtrl.push(SettingsPage);
   }
 
 

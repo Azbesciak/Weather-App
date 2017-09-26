@@ -6,21 +6,17 @@
 
 </ion-header>
 <ion-content padding>
-  <ion-grid>
-    <ion-row>
-      <ion-col width-150>
         <ion-list>
-          <form (ngSubmit)="saveForm()">
-            <ion-item>
-              <ion-label fixed>
-                {{ 'CITY' | translate }}
-              </ion-label>
-              <ion-input [(ngModel)]="location.city" name="city" type="text"></ion-input>
-            </ion-item>
-            <button ion-button block>{{'SAVE_CHANGES' | translate}}</button>
-          </form>
+          <ion-item>
+            <ion-label fixed>{{ 'CITY' | translate }}</ion-label>
+            <ion-input [(ngModel)]="location.city" name="city" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>{{'REFRESH_PERIOD' | translate}} </ion-label>
+            <ion-datetime [displayFormat]="periodFormat" pickerFormat="HH mm" [(ngModel)]="weatherRefreshPeriod"></ion-datetime>
+          </ion-item>
         </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 </ion-content>
+<ion-footer>
+  <button ion-button block id="save-changes" (click)="saveForm()">{{'SAVE_CHANGES' | translate}}</button>
+</ion-footer>

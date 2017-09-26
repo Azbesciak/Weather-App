@@ -5,7 +5,7 @@ import { Location, LocationProvider } from "../location/location"
 import { I18nProvider } from "../i18n/i18n";
 import { Storage } from "@ionic/storage";
 import { RefresherProvider } from "../refresher/refresher";
-import { Http } from "@angular/http";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class WeatherProvider {
@@ -13,7 +13,7 @@ export class WeatherProvider {
   private CURRENT_WEATHER_KEY = "currentWeather";
   private basicUrl: string;
 
-  constructor(public http: Http,
+  constructor(public http: HttpClient,
               private locationProvider: LocationProvider,
               private i18n: I18nProvider,
               private storage: Storage,
@@ -33,7 +33,6 @@ export class WeatherProvider {
   public getWeather(refresh: boolean = false): Promise<Weather> {
     return this.checkWeatherInStorage()
       .then((weather: Weather) => {
-        console.log("pogoda", weather);
         if (weather && !refresh)
           return weather;
         else
@@ -50,9 +49,7 @@ export class WeatherProvider {
   }
 
   public getWeatherForLocation(location): Promise<any> {
-    return this.http.get(this.getWeatherURL(location))
-      .map(res => res.json())
-      .toPromise();
+    return this.http.get(this.getWeatherURL(location)).toPromise();
   }
 
   private setLocationIfUnknown(res: any, location?: Location): any {
@@ -72,7 +69,7 @@ export class WeatherProvider {
   }
 
   private checkIfCanUseStoredWeather(weather: Weather): Promise<boolean> {
-    return this.refresher.refreshTime
+    return this.refresher.getRefreshTime()
       .then((period: number) => weather && this.isUpToDate(weather, period))
   }
 

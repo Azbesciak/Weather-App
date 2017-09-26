@@ -1,5 +1,9 @@
 page-settings {
-  button {
-    margin-top: 20px !important;
+  ion-footer {
+    height: 46px;
+    #save-changes {
+      margin: 0;
+      height: 100%;
+    }
   }
 }
