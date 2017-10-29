@@ -6,16 +6,24 @@
 
 </ion-header>
 <ion-content padding>
-        <ion-list>
-          <ion-item>
-            <ion-label fixed>{{ 'CITY' | translate }}</ion-label>
-            <ion-input [(ngModel)]="location.city" name="city" type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label fixed>{{'REFRESH_PERIOD' | translate}} </ion-label>
-            <ion-datetime [displayFormat]="periodFormat" pickerFormat="HH mm" [(ngModel)]="weatherRefreshPeriod"></ion-datetime>
-          </ion-item>
-        </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label fixed>{{ 'CITY' | translate }}</ion-label>
+          <ion-input [(ngModel)]="location.city" name="city" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>{{'REFRESH_PERIOD' | translate}} </ion-label>
+          <ion-datetime [displayFormat]="periodFormat" pickerFormat="HH mm" [(ngModel)]="weatherRefreshPeriod"></ion-datetime>
+        </ion-item>
+      </ion-list>
+    <ion-list padding-top="50">
+      <ion-list-header>
+        {{ 'HISTORY' | translate }}lama
+      </ion-list-header>
+      <ion-item *ngFor="let loc of historicalLocations" (click)="chooseLocationFromHistory(loc)">
+        <ion-label fixed>{{loc.city}}</ion-label>
+      </ion-item>
+    </ion-list>
 </ion-content>
 <ion-footer>
   <button ion-button block id="save-changes" (click)="saveForm()">{{'SAVE_CHANGES' | translate}}</button>

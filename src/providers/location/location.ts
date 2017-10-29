@@ -14,6 +14,7 @@ export class LocationProvider {
   }
 
   private CURRENT_LOCATION_KEY = "currentLocation";
+  private HISTORICAL_LOCATION = "historicalLocations";
   private _location: Location;
 
   constructor(private storage: Storage) {}
@@ -21,6 +22,25 @@ export class LocationProvider {
   public saveCurrentLocation(location: Location) {
     this.storage.set(this.CURRENT_LOCATION_KEY, location);
     this._location = location;
+  }
+
+  public addToLocations(location) {
+    return this.getHistoricalLocations()
+      .then((locations: Array<Location>) => {
+        let indexOfThisLocation = locations
+          .map(loc => loc.city)
+          .indexOf(location.city);
+        if (indexOfThisLocation >= 0) {
+          locations.splice(indexOfThisLocation, 1);
+        }
+        locations.unshift(location);
+        return this.storage.set(this.HISTORICAL_LOCATION, locations);
+      })
+  }
+
+  public getHistoricalLocations() {
+    return this.storage.get(this.HISTORICAL_LOCATION)
+      .then(locations => locations ? locations : [])
   }
 
 }

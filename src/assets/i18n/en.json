@@ -9,5 +9,6 @@
   "DEWPOINT": "Dewpoint",
   "VISIBILITY": "Visibility",
   "HEAT_INDEX": "Heat index",
-  "REFRESH_PERIOD": "Refresh"
+  "REFRESH_PERIOD": "Refresh",
+  "HISTORY": "History"
 }

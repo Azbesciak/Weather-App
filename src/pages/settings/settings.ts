@@ -6,13 +6,6 @@ import { Subject } from "rxjs/Subject";
 import { RefresherProvider } from "../../providers/refresher/refresher";
 import * as moment from "moment";
 
-/**
- * Generated class for the SettingsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: "page-settings",
@@ -24,6 +17,7 @@ export class SettingsPage {
   private weatherRefreshPeriod: string;
   private selectionResult;
   private selectionWatcher;
+  private historicalLocations: Array<Location>;
   periodFormat = "HH:mm";
 
   constructor(public navCtrl: NavController,
@@ -42,7 +36,13 @@ export class SettingsPage {
     this.refresher.getRefreshTime()
       .then(time => {
         this.weatherRefreshPeriod = moment(time).utcOffset(0).format(this.periodFormat)
-      })
+      });
+    this.updateLocations();
+  }
+
+  private updateLocations() {
+    this.locationProvider.getHistoricalLocations()
+      .then(locations => this.historicalLocations = locations)
   }
 
   private onLocationChanged(location: Location) {
@@ -57,15 +57,24 @@ export class SettingsPage {
 
   saveForm() {
     this.updateRefreshPeriod();
+    this.saveLocation()
+  }
+
+  chooseLocationFromHistory(location) {
+    this.location = location;
+    this.saveLocation();
+  }
+
+  private saveLocation() {
     this.locationProvider.location
       .then(location => {
         if (location && this.locationChanged(location)) {
           this.changeCurrentLocation(new Location(this.location.city, this.location.state));
+          this.addLocationToHistory(location);
         }
-        this.checkWeatherForLocation(this.location).then(locationCorrect => {
-          if (locationCorrect) {
-            this.goToHomePage();
-          }
+        this.checkWeatherForLocation(this.location)
+          .then(locationCorrect => {
+            if (locationCorrect) this.goToHomePage()
         });
       })
   }
@@ -78,6 +87,12 @@ export class SettingsPage {
 
   private locationChanged(location) {
     return (location.city != this.location.city || location.state != this.location.state);
+  }
+
+  private addLocationToHistory(location) {
+    this.locationProvider.addToLocations(location)
+      .then(() => this.updateLocations())
+      .then(() => console.log(this.historicalLocations))
   }
 
   private goToHomePage() {

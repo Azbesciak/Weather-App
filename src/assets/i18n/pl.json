@@ -11,6 +11,7 @@
   "VISIBILITY": "widoczność",
   "HEAT_INDEX": "Wskaźnik ciepła",
 
-  "REFRESH_PERIOD": "Odświeżanie"
+  "REFRESH_PERIOD": "Odświeżanie",
+  "HISTORY": "Historia"
 
 }
